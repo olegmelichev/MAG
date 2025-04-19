@@ -1,0 +1,202 @@
+This file contains the results for the beta functions of R^2, C^2,Subscript[E, GB] for quadratic gravity with propagating torsion. Note that the couplings are defined slightly differently with respect to the commonly used notations to stress the unwanted nature of propagating tachyons. To recover standard notations, one needs to replace \[Xi]-> - \[Xi]/6 , \[Rho]-> -\[Rho]/2.
+
+(* Vectorial Sector *)
+
+BetaLambda[lambda_, xi_, d1_, d2_,
+  r1_] := -1/
+   120*(lambda^2*(25024*d1^2 + 12472*d1*(4*d2 + 3*r1^2*xi) +
+       1559*(4*d2 + 3*r1^2*xi)^2))/(4*d1 + 4*d2 + 3*r1^2*xi)^2
+BetaXi[lambda_, xi_, d1_, d2_,
+  r1_] := (256*d1*d2*(5*lambda^2 + 15*lambda*xi + 2*xi^2) +
+    128*d1^2*(5*lambda^2 + 15*lambda*xi + 3*xi^2) +
+    48*d1*r1^2*xi*(20*lambda^2 + 60*lambda*xi + 13*xi^2) +
+    16*d2^2*(40*lambda^2 + 120*lambda*xi + 13*xi^2) +
+    24*d2*r1^2*xi*(40*lambda^2 + 120*lambda*xi + 17*xi^2) +
+    9*r1^4*xi^2*(40*lambda^2 + 120*lambda*xi + 29*xi^2))/(24*(4*d1 +
+       4*d2 + 3*r1^2*xi)^2)
+
+BetaRho[lambda_, xi_, rho_, d1_, d2_,
+  r1_] := -1/
+   120*(rho^2*(16448*d1^2 + 8184*d1*(4*d2 + 3*r1^2*xi) +
+       1023*(4*d2 + 3*r1^2*xi)^2))/(4*d1 + 4*d2 + 3*r1^2*xi)^2
+
+
+(* Pure Tensorial Sector - Hook-Antisymmetric Traceless Torsion *)
+
+
+BetaLambda[lambda_, xi_, d5_, d6_, d7_,r2_] := -1/
+   34560*(lambda^2*(438772432896*d5^7 +
+       3981312*d5^6*(220416*d6 + 76672*d7 -
+          3*r2^2*(1223*lambda + 10*xi)) -
+       45*d6*(d6 - d7)^2*(32*d6 + 32*d7 - lambda*r2^2)*(6912*d6^3 +
+          152*d7^2*(-32*d7 + lambda*r2^2) -
+          d6*(2816*d7^2 + 32*d7*r2^2*(7*lambda - xi) +
+             lambda*r2^4*xi) +
+          8*d6^2*(1120*d7 + r2^2*(-47*lambda + 4*xi))) +
+       20736*d5^5*(34490368*d6^2 - 1359872*d7^2 +
+          9*lambda*r2^4*(784*lambda + 15*xi) -
+          96*d7*r2^2*(828*lambda + 25*xi) +
+          96*d6*(202432*d7 - 7*r2^2*(1576*lambda + 15*xi))) +
+       108*d5^4*(2776301568*d6^3 -
+          3*(84738048*d7^3 + 237408*d7*lambda^2*r2^4 +
+             45*lambda^2*r2^6*xi -
+             5120*d7^2*r2^2*(1735*lambda + 7*xi)) -
+          32*d6*(22894592*d7^2 - 192*d7*r2^2*(1797*lambda - 85*xi) -
+             9*lambda*r2^4*(4319*lambda + 120*xi)) +
+          3072*d6^2*(556352*d7 - r2^2*(37353*lambda + 445*xi))) +
+       2*d5*(d6 - d7)*(114003968*d6^5 -
+          27180*d7^3*(-32*d7 + lambda*r2^2)^2 +
+          d6^2*(-60121088*d7^3 + 11743488*d7^2*lambda*r2^2 -
+             36*d7*lambda*r2^4*(11477*lambda - 360*xi) -
+             405*lambda^2*r2^6*xi) +
+          15*d6*d7*(32*d7 - lambda*r2^2)*(70016*d7^2 -
+             9*lambda*r2^4*xi + 12*d7*r2^2*(-805*lambda + 24*xi)) +
+          1024*d6^4*(16772*d7 - 9*r2^2*(473*lambda + 60*xi)) -
+          4*d6^3*(54597632*d7^2 -
+             960*d7*r2^2*(3857*lambda - 180*xi) -
+             9*lambda*r2^4*(1247*lambda + 840*xi))) +
+       3*d5^2*(2414772224*d6^5 +
+          6*d6*d7*(124239872*d7^3 +
+             72*d7*lambda*r2^4*(5749*lambda - 140*xi) -
+             1024*d7^2*r2^2*(15383*lambda - 90*xi) +
+             225*lambda^2*r2^6*xi) -
+          45*d7^2*(32*d7 - lambda*r2^2)*(171008*d7^2 -
+             3*lambda*r2^4*xi + 16*d7*r2^2*(-527*lambda + 6*xi)) +
+          1536*d6^4*(197056*d7 - 5*r2^2*(15965*lambda + 466*xi)) -
+          3*d6^2*(65994752*d7^3 + 585*lambda^2*r2^6*xi +
+             144*d7*lambda*r2^4*(10711*lambda + 100*xi) -
+             1024*d7^2*r2^2*(29831*lambda + 770*xi)) -
+          16*d6^3*(206360576*d7^2 -
+             1920*d7*r2^2*(5167*lambda - 46*xi) -
+             9*lambda*r2^4*(12241*lambda + 1140*xi))) +
+       36*d5^3*(1861050368*d6^4 +
+          3*d7*(58073088*d7^3 -
+             256*d7^2*r2^2*(22033*lambda - 90*xi) +
+             48*d7*lambda*r2^4*(2654*lambda - 45*xi) +
+             45*lambda^2*r2^6*xi) -
+          16*d6^2*(81943552*d7^2 -
+             48*d7*r2^2*(58817*lambda - 850*xi) -
+             27*lambda*r2^4*(2784*lambda + 125*xi)) -
+          d6*(333119488*d7^3 + 405*lambda^2*r2^6*xi +
+             4320*d7*lambda*r2^4*(371*lambda + xi) -
+             768*d7^2*r2^2*(62333*lambda + 550*xi)) +
+          256*d6^3*(3542272*d7 -
+             3*r2^2*(117101*lambda + 1950*xi)))))/(d5*(3*d5 +
+        d6)^2*(6*d5 + d6 - d7)^2*(64*d5 + 32*d6 + 32*d7 -
+        lambda*r2^2)^2)
+
+
+BetaXi[lambda_, xi_, d5_, d6_, d7_,
+  r2_] := (-45*
+     d6*(d6 - d7)^2*(d6 + d7)*(1024*d6^3 +
+       128*d6^2*(8*d7 - lambda*r2^2) - d7*(-32*d7 + lambda*r2^2)^2 +
+       d6*(-1024*d7^2 - 64*d7*lambda*r2^2 + 3*lambda^2*r2^4))*xi^2 +
+    191102976*d5^7*(10*lambda^2 + 30*lambda*xi + xi^2) +
+    995328*d5^6*(-3*lambda*r2^2*xi*(45*lambda + 7*xi) +
+       768*d6*(5*lambda^2 + 15*lambda*xi - 2*xi^2) +
+       128*d7*(10*lambda^2 + 30*lambda*xi + 3*xi^2)) +
+    d5*(d6 - d7)*(-801*d7^3*(-32*d7 + lambda*r2^2)^2*xi^2 +
+       3*d6*d7^2*(164864*d7^2 - 40192*d7*lambda*r2^2 +
+          1095*lambda^2*r2^4)*xi^2 +
+       5120*d6^5*(288*lambda^2 + 864*lambda*xi - 395*xi^2) +
+       64*d6^4*(45*lambda*r2^2*xi*(-32*lambda + 97*xi) +
+          16*d7*(1440*lambda^2 + 4320*lambda*xi - 3259*xi^2)) +
+       d6^3*(293376*d7*lambda*r2^2*xi^2 - 5895*lambda^2*r2^4*xi^2 -
+          4096*d7^2*(360*lambda^2 + 1080*lambda*xi - 373*xi^2)) -
+       d6^2*d7*(-1152*d7*lambda*r2^2*(80*lambda - 137*xi)*xi +
+          1989*lambda^2*r2^4*xi^2 +
+          20480*d7^2*(72*lambda^2 + 216*lambda*xi - 203*xi^2))) +
+    6*d5^2*(-9*
+        d7^3*(284672*d7^2 - 21024*d7*lambda*r2^2 + 379*lambda^2*r2^4)*
+        xi^2 + 10240*
+        d6^5*(528*lambda^2 + 1584*lambda*xi - 541*xi^2) +
+       96*d6^4*(25*lambda*r2^2*xi*(-144*lambda + 251*xi) +
+          64*d7*(320*lambda^2 + 960*lambda*xi - 477*xi^2)) -
+       3*d6^2*d7*(-64*d7*lambda*r2^2*(1080*lambda - 2863*xi)*xi +
+          27*lambda^2*r2^4*xi^2 +
+          4096*d7^2*(160*lambda^2 + 480*lambda*xi - 447*xi^2)) +
+       d6^3*(-10305*lambda^2*r2^4*xi^2 +
+          384*d7*lambda*r2^2*xi*(600*lambda + 599*xi) -
+          20480*d7^2*(336*lambda^2 + 1008*lambda*xi - 341*xi^2)) +
+       3*d6*d7^2*(3159*lambda^2*r2^4*xi^2 -
+          128*d7*lambda*r2^2*xi*(240*lambda + 509*xi) +
+          10240*d7^2*(48*lambda^2 + 144*lambda*xi - 47*xi^2))) +
+    432*d5^4*(6144*d6^3*(480*lambda^2 + 1440*lambda*xi - 389*xi^2) +
+       d6*(18*lambda^2*r2^4*xi^2 +
+          1152*d7*lambda*r2^2*xi*(35*lambda + 37*xi) -
+          2048*d7^2*(320*lambda^2 + 960*lambda*xi - 349*xi^2)) -
+       3*d7*(489*lambda^2*r2^4*xi^2 -
+          160*d7*lambda*r2^2*xi*(30*lambda + 91*xi) +
+          20480*d7^2*(4*lambda^2 + 12*lambda*xi + 7*xi^2)) +
+       32*
+        d6^2*(27*lambda*r2^2*xi*(-210*lambda + 103*xi) +
+          256*d7*(230*lambda^2 + 690*lambda*xi + 7*xi^2))) +
+    648*d5^5*(2304*d7*lambda*r2^2*(10*lambda - 11*xi)*xi +
+       1197*lambda^2*r2^4*xi^2 +
+       16384*d6^2*(290*lambda^2 + 870*lambda*xi - 193*xi^2) -
+       8192*d7^2*(20*lambda^2 + 60*lambda*xi - 127*xi^2) +
+       128*d6*(3*lambda*r2^2*xi*(-660*lambda + 59*xi) +
+          512*d7*(40*lambda^2 + 120*lambda*xi + 11*xi^2))) +
+    144*d5^3*(256*
+        d6^4*(7720*lambda^2 + 23160*lambda*xi - 6951*xi^2) -
+       4*d6^2*(351*lambda^2*r2^4*xi^2 -
+          30*d7*lambda*r2^2*xi*(432*lambda + 559*xi) +
+          128*d7^2*(2440*lambda^2 + 7320*lambda*xi - 2361*xi^2)) -
+       d6*d7*(1323*lambda^2*r2^4*xi^2 +
+          24*d7*lambda*r2^2*xi*(-1440*lambda + 1291*xi) +
+          4096*d7^2*(120*lambda^2 + 360*lambda*xi - 187*xi^2)) +
+       8*d6^3*(3*lambda*r2^2*xi*(-5280*lambda + 5359*xi) +
+          512*d7*(280*lambda^2 + 840*lambda*xi - 89*xi^2)) +
+       6*d7^2*(213*lambda^2*r2^4*xi^2 -
+          20*d7*lambda*r2^2*xi*(48*lambda + 467*xi) +
+          384*d7^2*(40*lambda^2 + 120*lambda*xi + 253*xi^2))))/(864*
+    d5*(3*d5 + d6)^2*(6*d5 + d6 - d7)^2*(64*d5 + 32*d6 + 32*d7 -
+       lambda*r2^2)^2)
+
+
+BetaRho[lambda_, xi_, rho_, d5_, d6_, d7_,
+  r2_] := -1/
+   2160*((19492503552*d5^7 +
+       248832*d5^6*(156672*d6 + 55424*d7 - 2523*lambda*r2^2) +
+       1296*d5^5*(24078336*d6^2 - 835584*d7^2 -
+          47136*d7*lambda*r2^2 + 4797*lambda^2*r2^4 +
+          32*d6*(425792*d7 - 22107*lambda*r2^2)) -
+       225*d6*(d6 - d7)^2*(d6 + d7)*(1024*d6^3 +
+          128*d6^2*(8*d7 - lambda*r2^2) -
+          d7*(-32*d7 + lambda*r2^2)^2 +
+          d6*(-1024*d7^2 - 64*d7*lambda*r2^2 + 3*lambda^2*r2^4)) +
+       d5*(d6 - d7)*(10458112*d6^5 +
+          64*d6^4*(86608*d7 - 3663*lambda*r2^2) -
+          1575*d7^3*(-32*d7 + lambda*r2^2)^2 +
+          d6^2*d7*(-3930112*d7^2 + 997632*d7*lambda*r2^2 -
+             37413*lambda^2*r2^4) +
+          d6^3*(-13760512*d7^2 + 1363200*d7*lambda*r2^2 -
+             387*lambda^2*r2^4) +
+          75*d6*d7^2*(44032*d7^2 - 6656*d7*lambda*r2^2 +
+             165*lambda^2*r2^4)) +
+       432*d5^4*(29389824*d6^3 +
+          32*d6^2*(561376*d7 - 35769*lambda*r2^2) -
+          6*d7*(430592*d7^2 - 45840*d7*lambda*r2^2 +
+             1287*lambda^2*r2^4) +
+          d6*(-7529472*d7^2 + 161664*d7*lambda*r2^2 +
+             12591*lambda^2*r2^4)) +
+       72*d5^3*(38102528*d6^4 +
+          48*d6^3*(378624*d7 - 35041*lambda*r2^2) +
+          3*d7^2*(1049088*d7^2 - 110768*d7*lambda*r2^2 +
+             2637*lambda^2*r2^4) -
+          2*d6*d7*(3579904*d7^2 - 496632*d7*lambda*r2^2 +
+             17505*lambda^2*r2^4) +
+          d6^2*(-26893312*d7^2 + 1098576*d7*lambda*r2^2 +
+             22293*lambda^2*r2^4)) +
+       6*d5^2*(48646144*d6^5 +
+          96*d6^4*(74496*d7 - 21865*lambda*r2^2) -
+          225*d7^3*(16384*d7^2 - 1440*d7*lambda*r2^2 +
+             29*lambda^2*r2^4) -
+          9*d6^2*d7*(385024*d7^2 - 187328*d7*lambda*r2^2 +
+             10903*lambda^2*r2^4) +
+          3*d6*d7^2*(5371904*d7^2 - 690944*d7*lambda*r2^2 +
+             18471*lambda^2*r2^4) +
+          d6^3*(-64761856*d7^2 + 3544320*d7*lambda*r2^2 +
+             27639*lambda^2*r2^4)))*
+     rho^2)/(d5*(3*d5 + d6)^2*(6*d5 + d6 - d7)^2*(64*d5 + 32*d6 +
+        32*d7 - lambda*r2^2)^2)
